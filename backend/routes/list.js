@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/user.js");
 const List = require("../models/list.js");
+const { response } = require("express");
 
 
 //create
@@ -49,5 +50,29 @@ router.delete("/deleteTask/:id",async(req,res)=>{
         
     }
 })
+
+
+//getTask
+router.get("/getTask/:id",async(req,res)=>{
+    try{
+        const list=await List.find({user:req.params.id});
+        res.status(200).json({list});
+
+        if(list.length!==0){
+            res.status(200).json({list:list});
+        }
+        else{
+            res.status(200).json({message:"No Tasks"});
+        }
+
+    }catch(error){
+        res.status(400).json({ message: "Internal server error" });
+    }
+})
+
+
+
+
+
 
 module.exports = router;
