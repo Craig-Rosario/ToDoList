@@ -1,0 +1,25 @@
+.home{
+    width: 100%;
+    height: 100vh;
+}
+
+.home h1{
+    font-size: 60px;
+}
+
+.home-btn{
+    background-color: tomato;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    box-shadow: none;
+    transition: box-shadow 0.7s ease-in-out;
+}
+
+.home-btn:hover{
+    box-shadow: 0 0 5px tomato,
+    0 0 15px tomato, 0 0 15px tomato,
+    0 0 15px tomato, 0 0 15px tomato;
+}

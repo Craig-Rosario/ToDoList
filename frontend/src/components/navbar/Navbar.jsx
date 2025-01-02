@@ -19,6 +19,9 @@ const Navbar = () => {
                                 <a className="nav-link active" aria-current="page"  >About us</a>
                             </li>
                             <li className="nav-item mx-2">
+                                <a className="nav-link active" aria-current="page"  >tOdo</a>
+                            </li>
+                            <li className="nav-item mx-2">
                                 <a className="nav-link active btn-nav" aria-current="page"  >Sign up</a>
                             </li>
                             <li className="nav-item mx-2">
@@ -26,9 +29,6 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item mx-2">
                                 <a className="nav-link active btn-nav" aria-current="page"  >Log out</a>
-                            </li>
-                            <li className="nav-item mx-2">
-                                <a className="nav-link active" aria-current="page"  ><img className='img-fluid user-png' src='https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png' alt='/'/></a>
                             </li>
                         </ul>
                     </div>
