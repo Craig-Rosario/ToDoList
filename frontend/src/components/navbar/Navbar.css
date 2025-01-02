@@ -1,0 +1,14 @@
+.user-png{
+    width: 50px;
+}
+.navbar-brand{
+    color: tomato;
+    font-weight: bold;
+}
+
+.btn-nav{
+    background-color: tomato;
+    border-radius: 5px;
+    color: white !important;
+    font-weight: bold;
+}
