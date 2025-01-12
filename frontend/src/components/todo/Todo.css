@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 100vh;
     max-height: auto;
+    position: relative;
 }
 .todo-inputs{
     border: none;
@@ -64,4 +65,52 @@
 }
 .card-icon-head:hover{
     box-shadow:rgb(36, 36, 36) 2px 2px 5px;
+}
+
+
+
+
+
+.todo-update{
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    position: fixed;
+    top: 7%;
+    left: 25%;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    display: none;  
+}
+
+
+.update-container{
+    width: 50%;
+    height: auto;
+    background-color: rgb(214, 211, 211);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+.edit-btn{
+    color: rgb(0, 0, 0);
+    background: inherit;
+}
+.edit-btn:hover{
+    transition: 0.5s;
+    box-shadow: rgb(7, 247, 235) 5px 5px 5px !important;
+    color: rgb(5, 76, 92);
+}
+
+
+.edit-close{
+    color: red;
+    border: none;
+}
+.edit-close{
+    box-shadow: red 2px 2px 5px !important;
+    transition: 0.3s;
 }
