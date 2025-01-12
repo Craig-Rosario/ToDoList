@@ -2,7 +2,7 @@ import React from 'react'
 import './Todo.css'
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-const TodoCards = ({ title, body }) => {
+const TodoCards = ({ title, body, id,delid}) => {
     return (
         <div className='p-3 bg-red todo-card'>
             <div>
@@ -13,7 +13,8 @@ const TodoCards = ({ title, body }) => {
                 <div className='d-flex justify-content-around card-icon-head p-3'>
                     <FaEdit className='card-icons'/>Edit
                 </div>
-                <div className='d-flex justify-content-around card-icon-head p-3 del-head text-danger'>
+                <div className='d-flex justify-content-around card-icon-head p-3 del-head text-danger' 
+                onClick={()=>{delid(id)}}>
                     <MdDelete  className='card-icons del'/>Delete
                 </div>
             </div>
