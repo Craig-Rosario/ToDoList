@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import axios from "axios";
 import './Signup.css'
-
-
+import {useNavigate} from "react-router-dom"
 const Signup = () => {
+    const history=useNavigate();
     const [Inputs, setInputs] = useState({ 
         email: "", 
         username: "", 
@@ -12,14 +13,24 @@ const Signup = () => {
         const { name, value } = e.target;
         setInputs({...Inputs,[name]:value})
     }
-    const submit=(e)=>{
+    const submit= async(e)=>{
         e.preventDefault();
-        setInputs({
-            email: "", 
-            username: "", 
-            password: "" 
-        })
-        console.log(Inputs);
+        await axios
+        .post("http://localhost:5000/api/v1/register", Inputs)
+        .then((response)=>{
+            if(response.data.message=="Username or Email already exists"){
+                alert(response.data.message);
+            }
+            else{
+                alert(response.data.message);
+                setInputs({
+                    email: "", 
+                    username: "", 
+                    password: "" 
+                })
+                history("/signin");
+            }
+        });
     }
     return (
         <div className='signup'>

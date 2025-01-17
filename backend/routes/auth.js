@@ -9,12 +9,14 @@ router.post("/register", async(req,res)=>{
         const {email,username,password}=req.body;
         const hashPassword=bcrypt.hashSync(password);
         const user=new User({email,username,password:hashPassword});
-        await user.save().then(()=>
-            res.status(200).json({user:user})
+        await user
+        .save()
+        .then(()=>
+            res.status(200).json({message:"Sign up successfull"})
         )
     }catch(error){
         if (error.code === 11000) {
-            return res.status(400).json({ message: "Username or Email already exists" });
+            return res.status(200).json({ message: "Username or Email already exists" });
         }
         res.status(400).json({ message: "Internal server error" });
     }
